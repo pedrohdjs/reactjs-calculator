@@ -15,10 +15,19 @@ const CalculatorWrapper = styled.div`
 
 `;
 
-
-
 function Calculator() {
   const [currentValue, setCurrentValue] = useState('');
+
+  const updateValue = (ev) => {
+    const appendedValue = ev.target.innerHTML;
+    let isValidUpdate;
+    if (appendedValue !== '.') {
+      isValidUpdate = (currentValue.length < 16);
+    } else {
+      isValidUpdate = !(currentValue.includes('.'));
+    }
+    setCurrentValue(() => ((isValidUpdate) ? currentValue + appendedValue : currentValue));
+  };
 
   return (
     <CalculatorWrapper>
