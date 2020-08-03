@@ -34,7 +34,7 @@ function Button({
   const isActionButton = action;
   const styleClass = (isActionButton) ? 'action' : '';
   return (
-    <ButtonWrapper onClick={onClick} className={styleClass}>
+    <ButtonWrapper onClick={onClick} className={styleClass} value={value}>
       {value}
     </ButtonWrapper>
   );

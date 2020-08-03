@@ -11,11 +11,12 @@ const DisplayWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     padding: 0 10px 0 10px;
+    overflow-x: auto;
 `;
 
 function Display({ value }) {
   return (
-    <DisplayWrapper>
+    <DisplayWrapper value={value}>
       {value}
     </DisplayWrapper>
   );
